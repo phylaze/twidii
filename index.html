@@ -3,253 +3,881 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Twidii</title>
+    <meta name="description" content="Twidii - Create once, share everywhere. The ultimate cross-posting app for content creators. Share your videos to YouTube, TikTok, Instagram, and more with one tap.">
+    <meta name="keywords" content="Twidii, cross-posting, social media, content creator, YouTube Shorts, TikTok, Instagram Reels, video sharing">
+    <meta property="og:title" content="Twidii - Create Once, Share Everywhere">
+    <meta property="og:description" content="The ultimate cross-posting app for content creators. Share your videos to all platforms with one tap.">
+    <meta property="og:type" content="website">
+    <title>Twidii - Create Once, Share Everywhere</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
+        :root {
+            --primary: #8B5CF6;
+            --primary-dark: #7C3AED;
+            --primary-light: #A78BFA;
+            --secondary: #EC4899;
+            --dark: #0F0F0F;
+            --gray: #6B7280;
+            --light-gray: #F3F4F6;
+            --white: #FFFFFF;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.7;
-            color: #333;
-            background-color: #f8f9fa;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
         }
-        .container {
-            max-width: 800px;
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #fff;
-            min-height: 100vh;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #8B5CF6;
-        }
-        h2 {
-            font-size: 1.5rem;
-            margin-top: 40px;
-            margin-bottom: 15px;
-            color: #1a1a1a;
-            border-bottom: 2px solid #8B5CF6;
-            padding-bottom: 10px;
-        }
-        h3 {
-            font-size: 1.2rem;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        p {
-            margin-bottom: 15px;
-        }
-        ul, ol {
-            margin-left: 25px;
-            margin-bottom: 15px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        .last-updated {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 30px;
-        }
-        .intro {
-            background-color: #f0f0f0;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        a {
-            color: #8B5CF6;
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
             text-decoration: none;
+            font-style: italic;
         }
-        a:hover {
-            text-decoration: underline;
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
         }
-        .contact-box {
-            background-color: #8B5CF6;
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
             color: white;
-            padding: 25px;
-            border-radius: 8px;
-            margin-top: 30px;
+            padding: 10px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
         }
-        .contact-box h2 {
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 20px 80px;
+            background: linear-gradient(135deg, #F5F3FF 0%, #FDF2F8 50%, #EFF6FF 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
             color: white;
-            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
         }
-        .contact-box a {
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--dark);
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            border: 2px solid var(--light-gray);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .phone-mockup {
+            width: 280px;
+            height: 580px;
+            background: var(--dark);
+            border-radius: 40px;
+            padding: 10px;
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             color: white;
-            font-weight: bold;
         }
-        strong {
-            color: #1a1a1a;
+
+        .phone-screen .app-logo {
+            font-size: 3rem;
+            font-weight: 800;
+            font-style: italic;
+            margin-bottom: 10px;
         }
-        .highlight {
-            background-color: #f5f0ff;
-            padding: 15px;
-            border-left: 4px solid #8B5CF6;
-            margin: 20px 0;
+
+        .phone-screen .app-tagline {
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.3rem; }
-            .container { padding: 20px 15px; }
+
+        .floating-icon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-icon:nth-child(2) { top: 10%; left: 0; animation-delay: 0s; }
+        .floating-icon:nth-child(3) { top: 30%; right: 0; animation-delay: 0.5s; }
+        .floating-icon:nth-child(4) { bottom: 30%; left: -10%; animation-delay: 1s; }
+        .floating-icon:nth-child(5) { bottom: 10%; right: 5%; animation-delay: 1.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Platforms Section */
+        .platforms {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 30px;
+        }
+
+        .platform-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 20px;
+            background: var(--light-gray);
+            transition: all 0.3s;
+        }
+
+        .platform-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .platform-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .platform-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, var(--light-gray) 0%, white 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 40px;
+            font-size: 2rem;
+            color: var(--primary-light);
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin: 0 auto 25px;
+        }
+
+        .step h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .cta .btn-primary:hover {
+            background: var(--light-gray);
+        }
+
+        .coming-soon-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand .logo {
+            color: white;
+            font-size: 2rem;
+        }
+
+        .footer-brand p {
+            color: var(--gray);
+            margin-top: 15px;
+            max-width: 300px;
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-content p {
+                margin: 0 auto 30px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                margin-top: 50px;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .platform-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .step:not(:last-child)::after {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .platform-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .phone-mockup {
+                width: 240px;
+                height: 500px;
+            }
+
+            .floating-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Privacy Policy</h1>
-        <p class="last-updated"><strong>Last Updated:</strong> January 16, 2025 | <strong>Effective Date:</strong> January 16, 2025</p>
-
-        <div class="intro">
-            <p>Welcome to <strong>Twidii</strong>. We are committed to protecting your privacy and ensuring you have a positive experience when using our mobile application and services. This Privacy Policy explains how we collect, use, disclose, and safeguard your information.</p>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+    <img src="twidii-logo.png" alt="Twidii" style="height: 40px;">
+</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#platforms">Platforms</a></li>
+                <li><a href="privacy-policy.html">Privacy</a></li>
+            </ul>
+            <a href="#download" class="nav-cta">Download App</a>
         </div>
+    </nav>
 
-        <h2>1. Information We Collect</h2>
-        
-        <h3>Personal Information You Provide</h3>
-        <p>We collect personal information that you voluntarily provide when you register for the App, including:</p>
-        <ul>
-            <li><strong>Account Information:</strong> Email address, first name, last name, username, and password</li>
-            <li><strong>Profile Information:</strong> Profile picture, bio, display name</li>
-            <li><strong>Social Media Account Information:</strong> When you connect third-party accounts (YouTube, TikTok, Instagram, Twitter/X, Pinterest, Snapchat), we collect your username, display name, profile picture, and authentication tokens</li>
-            <li><strong>Content:</strong> Videos, images, text, and captions you create or share</li>
-            <li><strong>Communications:</strong> Information from support requests or feedback</li>
-        </ul>
-
-        <h3>Information Collected Automatically</h3>
-        <ul>
-            <li><strong>Device Information:</strong> Device type, operating system, unique identifiers</li>
-            <li><strong>Usage Information:</strong> Features used, actions taken, session duration</li>
-            <li><strong>Analytics Data:</strong> Via Firebase Analytics - pages viewed, crash reports, performance data</li>
-        </ul>
-
-        <h2>2. How We Use Your Information</h2>
-        <ul>
-            <li><strong>Provide Services:</strong> Create accounts, enable content creation, facilitate cross-posting</li>
-            <li><strong>Improve Services:</strong> Understand usage patterns, develop new features</li>
-            <li><strong>Communications:</strong> Send service notifications, security alerts, promotional emails (opt-out available)</li>
-            <li><strong>Safety & Security:</strong> Detect fraud, prevent abuse, address technical issues</li>
-            <li><strong>Legal Compliance:</strong> Comply with applicable laws and regulations</li>
-        </ul>
-
-        <h2>3. How We Share Your Information</h2>
-        <ul>
-            <li><strong>With Your Consent:</strong> When cross-posting to connected social platforms</li>
-            <li><strong>Service Providers:</strong> Firebase/Google Cloud for hosting, storage, analytics</li>
-            <li><strong>Legal Requirements:</strong> When required by law or valid legal processes</li>
-            <li><strong>Business Transfers:</strong> In connection with mergers, acquisitions, or asset sales</li>
-        </ul>
-        
-        <div class="highlight">
-            <strong>We do not sell your personal information.</strong>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Create Once,<br><span>Share Everywhere</span></h1>
+                <p>The ultimate cross-posting app for content creators. Record a video once and instantly share it to YouTube, TikTok, Instagram, and all your favorite platforms with a single tap.</p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn-primary">
+                        <span>📱</span> Get the App
+                    </a>
+                    <a href="#how-it-works" class="btn-secondary">
+                        <span>▶️</span> See How It Works
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-icon">📺</div>
+                <div class="floating-icon">🎵</div>
+                <div class="floating-icon">📸</div>
+                <div class="floating-icon">📌</div>
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="app-logo">T</div>
+                        <div class="app-tagline">Twidii</div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <h2>4. Data Retention & Security</h2>
-        <p>We retain your information as long as your account is active. When you delete your account, we delete or anonymize your data within 30 days.</p>
-        <p>We implement security measures including encryption, secure authentication, and access controls. However, no method of transmission is 100% secure.</p>
-
-        <h2>5. Your Privacy Rights</h2>
-        <p>All users have the right to:</p>
-        <ul>
-            <li><strong>Access:</strong> Request a copy of your personal information</li>
-            <li><strong>Correction:</strong> Request correction of inaccurate data</li>
-            <li><strong>Deletion:</strong> Request deletion of your data</li>
-            <li><strong>Data Portability:</strong> Receive your data in a machine-readable format</li>
-            <li><strong>Withdraw Consent:</strong> Withdraw consent at any time</li>
-            <li><strong>Opt-Out:</strong> Unsubscribe from marketing communications</li>
-        </ul>
-
-        <h2>6. California Privacy Rights (CCPA/CPRA)</h2>
-        <p>California residents have additional rights:</p>
-        <ul>
-            <li><strong>Right to Know:</strong> Request disclosure of data collected, sources, and purposes</li>
-            <li><strong>Right to Delete:</strong> Request deletion of personal information</li>
-            <li><strong>Right to Correct:</strong> Request correction of inaccurate data</li>
-            <li><strong>Right to Opt-Out of Sale:</strong> We do not sell your personal information</li>
-            <li><strong>Right to Non-Discrimination:</strong> We will not discriminate for exercising your rights</li>
-        </ul>
-        <p><strong>Categories of information collected:</strong> Identifiers (name, email, username), Internet activity (usage data), Audio/visual information (your uploaded content).</p>
-
-        <h2>7. European Privacy Rights (GDPR)</h2>
-        <p>If you are in the EEA, UK, or Switzerland, you have rights under GDPR:</p>
-        <ul>
-            <li>Access, rectification, erasure, and restriction of processing</li>
-            <li>Data portability and right to object</li>
-            <li>Withdraw consent and lodge complaints with supervisory authorities</li>
-        </ul>
-        <p><strong>Legal Basis:</strong> Consent, contract performance, legitimate interests, and legal obligations.</p>
-
-        <h2>8. California Online Privacy Protection Act (CalOPPA)</h2>
-        <ul>
-            <li>Users can visit our App anonymously (with limited functionality)</li>
-            <li>This Privacy Policy is easily accessible</li>
-            <li>Users will be notified of policy changes</li>
-            <li>Users can edit their personal information in their account</li>
-            <li>We do not currently respond to Do Not Track signals</li>
-        </ul>
-
-        <h2>9. Children's Privacy</h2>
-        <p>Our App is <strong>not intended for children under 13</strong>. We do not knowingly collect information from children under 13. If we discover such data was collected, we will delete it promptly.</p>
-        <p>Users between 13-18 may use the App with parental consent.</p>
-
-        <h2>10. Camera and Media Access</h2>
-        <p>We require camera access to enable you to:</p>
-        <ul>
-            <li>Record videos within the App</li>
-            <li>Take photos for posts</li>
-            <li>Create content for cross-posting</li>
-        </ul>
-        <p>We only access your camera when you actively choose to record. We do not access your camera in the background.</p>
-
-        <h2>11. Analytics and Tracking</h2>
-        <p>We use Firebase Analytics to understand how users interact with our App. This includes:</p>
-        <ul>
-            <li>App opens and session duration</li>
-            <li>Features and screens used</li>
-            <li>Device type and OS</li>
-            <li>Crash reports</li>
-            <li>General location (country level)</li>
-        </ul>
-
-        <h2>12. Email Communications</h2>
-        <p>We send emails for:</p>
-        <ul>
-            <li><strong>Transactional:</strong> Account verification, password resets, security alerts</li>
-            <li><strong>Service Updates:</strong> New features, important changes</li>
-            <li><strong>Marketing:</strong> Promotional content (opt-out available)</li>
-        </ul>
-        <p>Opt-out by clicking "unsubscribe" in any email or contacting us.</p>
-
-        <h2>13. Third-Party Services</h2>
-        <p>We use the following third-party services:</p>
-        <ul>
-            <li><strong>Firebase (Google):</strong> Authentication, database, storage, analytics</li>
-            <li><strong>Social Media Platforms:</strong> Your use of connected platforms is governed by their privacy policies</li>
-        </ul>
-
-        <h2>14. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy periodically. We will notify you by updating the "Last Updated" date and, for significant changes, by email notification.</p>
-
-        <div class="contact-box">
-            <h2>Contact Us</h2>
-            <p>If you have questions about this Privacy Policy, please contact us:</p>
-            <p><strong>Email:</strong> <a href="mailto:twidiiapp@gmail.com">twidiiapp@gmail.com</a></p>
-            <p>We will respond within 30 days.</p>
+    <!-- Platforms Section -->
+    <section class="platforms" id="platforms">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>One App. All Your Platforms.</h2>
+                <p>Connect all your social media accounts and post to them simultaneously. Save hours of repetitive work.</p>
+            </div>
+            <div class="platform-grid">
+                <div class="platform-item">
+                    <div class="platform-icon">📺</div>
+                    <h3>YouTube Shorts</h3>
+                </div>
+                <div class="platform-item">
+                    <div class="platform-icon">🎵</div>
+                    <h3>TikTok</h3>
+                </div>
+                <div class="platform-item">
+                    <div class="platform-icon">📸</div>
+                    <h3>Instagram Reels</h3>
+                </div>
+                <div class="platform-item">
+                    <div class="platform-icon">🐦</div>
+                    <h3>Twitter / X</h3>
+                </div>
+                <div class="platform-item">
+                    <div class="platform-icon">📌</div>
+                    <h3>Pinterest</h3>
+                </div>
+                <div class="platform-item">
+                    <div class="platform-icon">👻</div>
+                    <h3>Snapchat</h3>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <p style="margin-top: 40px; text-align: center; color: #666; font-size: 0.9rem;">
-            <em>By using Twidii, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.</em>
-        </p>
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Everything You Need to Go Viral</h2>
+                <p>Powerful features designed to help content creators save time and grow their audience across all platforms.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <h3>Record & Edit</h3>
+                    <p>Capture stunning vertical videos directly in the app with our intuitive camera. Perfect for Shorts, Reels, and TikToks.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>One-Tap Cross-Post</h3>
+                    <p>Select your platforms and post to all of them with a single tap. No more copying, pasting, or uploading the same content multiple times.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Easy Account Linking</h3>
+                    <p>Connect your social media accounts securely in seconds. We support all major platforms and adding more regularly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Smart Watermark</h3>
+                    <p>Automatically add your Twidii watermark to videos shared on other platforms. Build your brand recognition effortlessly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Explore & Discover</h3>
+                    <p>Browse content from other creators, get inspired, and grow your community all within the Twidii ecosystem.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Text Posts & Stories</h3>
+                    <p>Create beautiful text-based posts with custom fonts, colors, and backgrounds. Perfect for quotes and announcements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <p style="margin-top: 20px; text-align: center; color: #999; font-size: 0.85rem;">
-            © 2025 Twidii. All rights reserved.
-        </p>
-    </div>
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Get started in minutes. It's that simple.</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Create Account</h3>
+                    <p>Sign up with your email or Google account in seconds.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Link Platforms</h3>
+                    <p>Connect your YouTube, TikTok, Instagram, and other accounts.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Create Content</h3>
+                    <p>Record a video or upload from your gallery. Add captions and hashtags.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Share Everywhere</h3>
+                    <p>Select platforms and tap publish. Your content goes live instantly!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="download">
+        <div class="section-container">
+            <h2>Ready to Grow Your Audience?</h2>
+            <p>Join thousands of content creators who are saving hours every week with Twidii. Download now and start cross-posting like a pro.</p>
+            <a href="#" class="btn-primary">
+                <span>📱</span> Download Twidii
+            </a>
+            <div class="coming-soon-badge">
+                🚀 Available on Android • iOS Coming Soon
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+    <img src="twidii-logo.png" alt="Twidii" style="height: 40px;">
+</a>
+                    <p>Create once, share everywhere. The ultimate cross-posting app for modern content creators.</p>
+                    <div class="social-links">
+                        <a href="#" title="YouTube">📺</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="Instagram">📸</a>
+                        <a href="#" title="TikTok">🎵</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#platforms">Platforms</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#download">Download</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="mailto:twidiiapp@gmail.com">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="privacy-policy.html#ccpa">CCPA</a></li>
+                        <li><a href="privacy-policy.html#gdpr">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Twidii. All rights reserved.</p>
+                <p>Made with ❤️ for content creators</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
